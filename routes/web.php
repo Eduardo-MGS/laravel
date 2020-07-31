@@ -75,10 +75,11 @@ Route::resource('proyectos', 'PortfolioController');
 
 
 Route::view('/', 'home')->name('home');
-Route::view('/about', 'about')->name('about');
-Route::view('/contact', 'contact')->name('contact');
-Route::get('/portafolio', 'PortfolioController@index')->name('portfolio');
+Route::view('/acerca-de', 'about')->name('about');
+Route::view('/contacto', 'contact')->name('contact');
+Route::get('/portafolio', 'ProjectController@index')->name('projects.index');
+Route::get('/portafolio/{id}', 'ProjectController@show')->name('projects.show');
 
-Route::post('contact', 'MessagesController@store');
+Route::post('contact', 'MessageController@store')->name('messages.store');
 
 
