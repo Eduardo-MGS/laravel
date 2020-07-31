@@ -7,7 +7,7 @@
 
     <ul>
         @forelse ($portfolio as $portafolioItem)
-            <li> {{$portafolioItem->title}} <br> <small> {{$portafolioItem->description}} </small> <br> {{ $portafolioItem->created_at->diffForHumans() }}</li>
+        <li> <a href="{{ route('projects.show', $portafolioItem) }}">{{$portafolioItem->title}}</a></li>
         @empty
             <li> Fin de los proyectos </li>
         @endforelse
