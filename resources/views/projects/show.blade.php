@@ -10,6 +10,7 @@
 
         <p><strong>Descripcion: </strong> {{ $project['description'] }} </p>
         <p><strong>Creado: </strong> {{ $project['created_at']->diffForHumans() }} </p>
+        <p><strong>Actualizado: </strong> {{ $project['updated_at']->diffForHumans() }} </p>
 
     </ul>
 @endsection

@@ -15,10 +15,32 @@ class ProjectController extends Controller
         return view('projects.index', compact('portfolio'));
     }
 
-    public function show($id)
+    public function show(Project $project)
     {
-        $project = Project::findOrFail($id);
+        // return $id;
 
         return view('projects.show', compact('project'));
+    }
+
+    public function create()
+    {
+        // return $id;
+
+        return view('projects.create');
+    }
+
+    public function store()
+    {
+        /*
+        Project::create([
+            'title' => request('title'),
+            'url' => request('url'),
+            'description' => request('description'),
+        ]);
+        */
+
+        Project::create(request()->all());
+
+        return redirect()->route('projects.index');
     }
 }
